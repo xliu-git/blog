@@ -50,7 +50,7 @@ outputs:
 params:
   social:
     - name: github
-      url: https://github.com/myusername
+      url: https://github.com/xliu-git
     - name: x
       url: https://x.com/myusername
     - name: youtube

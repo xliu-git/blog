@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Pagination on My New Hugo Site</title>
+    <title>Pagination on Xiaohan Liu blog</title>
     <link>http://localhost:1313/tags/pagination/</link>
-    <description>Recent content in Pagination on My New Hugo Site</description>
+    <description>Recent content in Pagination on Xiaohan Liu blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 28 Feb 2024 23:12:51 +0530</lastBuildDate>
