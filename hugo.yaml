@@ -18,7 +18,7 @@ params:
   title: ExampleSite
   description: "ExampleSite description"
   keywords: [Blog, Portfolio, PaperMod]
-  author: Me
+  author: Xiaohan
   # author: ["Me", "You"] # multiple authors
   images: ["<link or path of image for opengraph, twitter-cards>"]
   DateFormat: "January 2, 2006"
@@ -26,12 +26,12 @@ params:
   disableThemeToggle: false
 
   ShowReadingTime: true
-  ShowShareButtons: true
-  ShowPostNavLinks: true
+  ShowShareButtons: false
+  ShowPostNavLinks: false
   ShowBreadCrumbs: true
-  ShowCodeCopyButtons: false
-  ShowWordCount: true
-  ShowRssButtonInSectionTermList: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: false
+  ShowRssButtonInSectionTermList: false
   UseHugoToc: true
   disableSpecial1stPost: false
   disableScrollToTop: false
@@ -72,16 +72,16 @@ params:
 
   # home-info mode
   homeInfoParams:
-    Title: "Hi there \U0001F44B"
+    Title: "Because it's there \U0001F3D4"
     Content: Welcome to my blog
 
   socialIcons:
-    # - name: x
-    #   url: "https://x.com/"
-    # - name: stackoverflow
-    #   url: "https://stackoverflow.com"
     - name: github
       url: "https://github.com/xliu-git"
+    - name: linkedin
+      url: "https://www.linkedin.com/in/xiaohan-liu-281058195/"
+    - name: email
+      url: "mailto:liuxiaohan0522@163.com"
 
   analytics:
     google:
@@ -96,10 +96,10 @@ params:
     hiddenInList: true # hide on list pages and home
     hiddenInSingle: true # hide on single page
 
-  editPost:
-    URL: "https://github.com/<path_to_repo>/content"
-    Text: "Suggest Changes" # edit text
-    appendFilePath: true # to append file path to Edit link
+  # editPost:
+  #   URL: "https://github.com/xliu-git/blog/tree/main/content/posts"
+  #   Text: "Suggest Changes" # edit text
+  #   appendFilePath: true # to append file path to Edit link
 
   # for search
   # https://fusejs.io/api/options.html
@@ -114,17 +114,21 @@ params:
     keys: ["title", "permalink", "summary", "content"]
 menu:
   main:
-    - identifier: categories
-      name: categories
-      url: /categories/
-      weight: 10
-    - identifier: tags
-      name: tags
+    # - identifier: categories
+    #   name: categories
+    #   url: /categories/
+    #   weight: 10
+    - identifier: Tags
+      name: Tags
       url: /tags/
+      weight: 10
+    - identifier: Archives
+      name: Archives
+      url: /archives/
       weight: 20
-    - identifier: example
-      name: example.org
-      url: https://example.org
+    - identifier: Profile
+      name: Profile
+      url: https://xliu-git.github.io/
       weight: 30
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true

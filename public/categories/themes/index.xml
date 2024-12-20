@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Themes on Xiaohan Liu Blog</title>
+    <link>http://localhost:1313/categories/themes/</link>
+    <description>Recent content in Themes on Xiaohan Liu Blog</description>
+    <image>
+      <title>Xiaohan Liu Blog</title>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.140.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 20 Dec 2024 17:22:24 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/themes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo常见命令</title>
+      <link>http://localhost:1313/posts/hugo%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Fri, 20 Dec 2024 17:22:24 +0800</pubDate>
+      <guid>http://localhost:1313/posts/hugo%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;发表新文章&lt;/strong&gt;&lt;br&gt;
+&lt;code&gt;hugo new content content/posts/FILE_NAME.md&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;记得把draft改false&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
