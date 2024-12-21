@@ -73,7 +73,7 @@ params:
   # home-info mode
   homeInfoParams:
     Title: "Because it's there \U0001F3D4"
-    Content: Welcome to my blog
+    Content: 欢迎给我介绍工作
 
   socialIcons:
     - name: github
