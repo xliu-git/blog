@@ -11,8 +11,85 @@
     </image>
     <generator>Hugo -- 0.140.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Dec 2024 21:14:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 22 Dec 2024 17:19:16 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>常见面试题-线程</title>
+      <link>http://localhost:1313/posts/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98-%E7%BA%BF%E7%A8%8B/</link>
+      <pubDate>Sun, 22 Dec 2024 17:19:16 +0800</pubDate>
+      <guid>http://localhost:1313/posts/%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98-%E7%BA%BF%E7%A8%8B/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;创建线程的方式&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;继承Thread类
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;public class ThreadTest {
+    public static void main(String[] args) {
+        System.out.println(&amp;#34;Main thread: &amp;#34; + Thread.currentThread());
+        TestThread testThread = new TestThread();
+
+        // run at a new thread
+        testThread.start();
+
+        // still run at the current thread
+        testThread.run();
+    }
+}   
+
+class TestThread extends Thread {
+    @Override
+    public void run() {
+        System.out.println(&amp;#34;Test thread extends Thread class: &amp;#34; + Thread.currentThread());
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;输出
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Main thread: Thread[main,5,main]
+Test thread extends Thread class: Thread[main,5,main]
+Test thread extends Thread class: Thread[Thread-0,5,main]
+&lt;/code&gt;&lt;/pre&gt;这里也可以很明显的看出来start和run的区别，start是新拉一个线程跑，run是直接调用类方法。且start方法只能被调用一次，源码在这里首先检测了一下state，非0的话报错，进一步应该是通过调用一个native方法start0()。
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;/**
+ * This method is not invoked for the main method thread or &amp;#34;system&amp;#34;
+ * group threads created/set up by the VM. Any new functionality added
+ * to this method in the future may have to also be added to the VM.
+ *
+ * A zero status value corresponds to state &amp;#34;NEW&amp;#34;.
+ */
+if (threadStatus != 0)
+    throw new IllegalThreadStateException();
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;实现Runnable&lt;br&gt;
+Runnable是一个接口，通过实现Runnable接口，在创建Thread的时候可以直接使用有Runnable参数的构造函数
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;public class ThreadTest {
+    public static void main(String[] args) {
+        System.out.println(&amp;#34;Main thread: &amp;#34; + Thread.currentThread());
+        Thread testThread = new Thread(new TestRunnable());
+        testThread.start();
+    }
+}
+
+class TestRunnable implements Runnable {
+
+    @Override
+    public void run() {
+        System.out.println(&amp;#34;TestRunnable: &amp;#34; + Thread.currentThread());
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;实现Callable&lt;br&gt;
+Callable也是一个接口，比Runnable优越的地方在于可以返回值，且可以返回检查过的异常。
+Java推荐直接用ExecutoreService来submit Callable，这里有一个很有趣的问题就是为什么Thread没有像Runnable那样直接给Callabla提供一个构造函数。&lt;br&gt;
+简单查了一下，首先是因为历史兼容性的问题，Thread与Runnable早在Java 1.0时代就已经发布了，而Callable则是在Java 1.5的&lt;code&gt;java.util.concurrent&lt;/code&gt;
+发布的，为了保证向后兼容性（新代码跑在老版本上），Thread并没有实现或者提供Callable。&lt;br&gt;
+其次是因为Java逻辑上的设计，thread与task是两个不同的
+概念，想象一下thread作为一个worker，而task作为一个work，比起为每个线程指定一个work这种“从一而终”的设计，这种解耦具有更好的性能，毕竟线程是系统中很珍贵的计算资源的抽象, 在这种设计下，一个thread可以重复利用执行不同的work，以及一个work也可以在不同的线程中并发处理。简而言之就是thread以及executor负责how to execute，
+而task负责what to execute。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ExecutorService es = Executors.newSingleThreadExecutor();
+es.submit(() -&amp;gt; {
+    System.out.println(&amp;#34;Callable function: &amp;#34; + Thread.currentThread());
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;虽然Thread并没有直接提供Callable相关的接口，但是FutureTask实际弥补了Runnable和Callable之间的gap，通过FutureTask来执行Callable，同时传参给Thread，也可以间接实现Thread对于Callable的调用，但要注意这里实际的Callable异常处理是发生在FutureTask中的。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>使用GitHub托管Hugo博客</title>
       <link>http://localhost:1313/posts/%E4%BD%BF%E7%94%A8github%E6%89%98%E7%AE%A1hugo%E5%8D%9A%E5%AE%A2/</link>
