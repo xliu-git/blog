@@ -11,29 +11,8 @@
     </image>
     <generator>Hugo -- 0.140.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 22 Dec 2024 17:19:16 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 20 Dec 2024 21:14:00 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Java</title>
-      <link>http://localhost:1313/tags/java/</link>
-      <pubDate>Sun, 22 Dec 2024 17:19:16 +0800</pubDate>
-      <guid>http://localhost:1313/tags/java/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>八股文</title>
-      <link>http://localhost:1313/tags/%E5%85%AB%E8%82%A1%E6%96%87/</link>
-      <pubDate>Sun, 22 Dec 2024 17:19:16 +0800</pubDate>
-      <guid>http://localhost:1313/tags/%E5%85%AB%E8%82%A1%E6%96%87/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>线程</title>
-      <link>http://localhost:1313/tags/%E7%BA%BF%E7%A8%8B/</link>
-      <pubDate>Sun, 22 Dec 2024 17:19:16 +0800</pubDate>
-      <guid>http://localhost:1313/tags/%E7%BA%BF%E7%A8%8B/</guid>
-      <description></description>
-    </item>
     <item>
       <title>Github</title>
       <link>http://localhost:1313/tags/github/</link>
