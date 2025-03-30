@@ -9,7 +9,7 @@ tags: ["MCP", "AI"]
 MCP是一个标准化协议（protocol），规定了应用和大模型之间的通信格式，比如我们常说的USB-C就是一种协议，同一种协议，不同厂家的具体实现可能有很多种，比如USB2.0 Type-C, USB3.1 Gen1 Type-C, Thunderbolt3/4 Type-C等。
 ### MCP宏观架构
 我根据[MCP introduction的图](https://modelcontextprotocol.io/introduction#general-architecture)，以及官方给出的MCP Server和Client的例子，结合自己的理解画了一张图。
-![](../../assets/MCP_Architecture.png)
+![](./MCP_Architecture.png)
 1. Host:一个应用，或者更抽象，应用中的一个connection pool，维护着各种MCP Client的connection instances。
 2. MCP Client:我在这里把client理解成一个跟其他通信协议类似的client，比如http client、webSocket client，负责跟具体server的connection。
 3. MCP Server:即提供不同服务的服务器，不同的外部Service Provider可以有若干个MCP Server负责容错冗余负载均衡，同时，内部的依赖也可以有自建的MCP Server。
