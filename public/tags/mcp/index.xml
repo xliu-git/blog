@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>MCP on Xiaohan Liu Blog</title>
+    <link>http://localhost:1313/tags/mcp/</link>
+    <description>Recent content in MCP on Xiaohan Liu Blog</description>
+    <image>
+      <title>Xiaohan Liu Blog</title>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.140.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 30 Mar 2025 21:25:33 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/mcp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MCP小结</title>
+      <link>http://localhost:1313/posts/mcp%E5%B0%8F%E7%BB%93/</link>
+      <pubDate>Sun, 30 Mar 2025 21:25:33 +0800</pubDate>
+      <guid>http://localhost:1313/posts/mcp%E5%B0%8F%E7%BB%93/</guid>
+      <description>&lt;h3 id=&#34;什么是mcp&#34;&gt;什么是MCP&lt;/h3&gt;
+&lt;p&gt;MCP是一个标准化协议（protocol），规定了应用和大模型之间的通信格式，比如我们常说的USB-C就是一种协议，同一种协议，不同厂家的具体实现可能有很多种，比如USB2.0 Type-C, USB3.1 Gen1 Type-C, Thunderbolt3/4 Type-C等。&lt;/p&gt;
+&lt;h3 id=&#34;mcp宏观架构&#34;&gt;MCP宏观架构&lt;/h3&gt;
+&lt;p&gt;我根据&lt;a href=&#34;https://modelcontextprotocol.io/introduction#general-architecture&#34;&gt;MCP introduction的图&lt;/a&gt;，以及官方给出的MCP Server和Client的例子，结合自己的理解画了一张图。
+&lt;img loading=&#34;lazy&#34; src=&#34;../../assets/MCP_Architecture.png&#34;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Host:一个应用，或者更抽象，应用中的一个connection pool，维护着各种MCP Client的connection instances。&lt;/li&gt;
+&lt;li&gt;MCP Client:我在这里把client理解成一个跟其他通信协议类似的client，比如http client、webSocket client，负责跟具体server的connection。&lt;/li&gt;
+&lt;li&gt;MCP Server:即提供不同服务的服务器，不同的外部Service Provider可以有若干个MCP Server负责容错冗余负载均衡，同时，内部的依赖也可以有自建的MCP Server。&lt;/li&gt;
+&lt;li&gt;Orchestration Service:负责组合各种MCP Client的tool，决定什么时候调用哪个MCP client的哪种tool，并通过返回的response进行下一步的工作。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;mcp-server例子&#34;&gt;MCP Server例子&lt;/h3&gt;
+&lt;p&gt;我最开始对于MCP Server的理解是Service Provider专门针对MCP协议所部属的server，那么所有的MCP Server的开发工作应该属于Service Provider，但查看了一下&lt;a href=&#34;https://github.com/modelcontextprotocol/servers/tree/main/src/github&#34;&gt;github为Claude给出的MCP Server例子&lt;/a&gt;后发现MCP Server其实更类似于一种本地对于service provider的封装，或者说专门针对MCP协议路由的controller，提供MCP协议要求的服务，至于服务的具体实现，则是通过service provider原有的API call实现的。&lt;/p&gt;
+&lt;p&gt;以github的MCP server为例：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;提供tool列表、描述以及schema：https://github.com/modelcontextprotocol/servers/blob/main/src/github/index.ts#L71&lt;/li&gt;
+&lt;li&gt;提供tool路由：https://github.com/modelcontextprotocol/servers/blob/main/src/github/index.ts#L208&lt;/li&gt;
+&lt;li&gt;运行tool（通过API实现）：https://github.com/modelcontextprotocol/servers/blob/main/src/github/operations/commits.ts#L12&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;mcp-client例子&#34;&gt;MCP Client例子&lt;/h3&gt;
+&lt;h3 id=&#34;reference&#34;&gt;Reference&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://modelcontextprotocol.io/introduction&#34;&gt;https://modelcontextprotocol.io/introduction&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+  </channel>
+</rss>
