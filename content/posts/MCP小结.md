@@ -21,9 +21,6 @@ MCP是一个标准化协议（protocol），规定了应用和大模型之间的
 1. 提供tool列表、描述以及schema：https://github.com/modelcontextprotocol/servers/blob/main/src/github/index.ts#L71
 2. 提供tool路由：https://github.com/modelcontextprotocol/servers/blob/main/src/github/index.ts#L208
 3. 运行tool（通过API实现）：https://github.com/modelcontextprotocol/servers/blob/main/src/github/operations/commits.ts#L12
-### MCP Client例子
-
-
 
 ### Reference
 1. https://modelcontextprotocol.io/introduction
