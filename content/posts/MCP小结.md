@@ -12,7 +12,7 @@ MCP是一个标准化协议（protocol），规定了应用和大模型之间的
 ![](./MCP_Architecture.png)
 1. Host:一个应用，或者更抽象，应用中的一个connection pool，维护着各种MCP Client的connection instances。
 2. MCP Client:我在这里把client理解成一个跟其他通信协议类似的client，比如http client、webSocket client，负责跟具体server的connection。
-3. MCP Server:即提供不同服务的服务器，不同的外部Service Provider可以有若干个MCP Server负责容错冗余负载均衡，同时，内部的依赖也可以有自建的MCP Server。
+3. MCP Server:即提供相应服务的“server”，这里的server可能只是一层调用外部service provider API的封装，当然，内部的依赖也可以有native的MCP Server。
 4. Orchestration Service:负责组合各种MCP Client的tool，决定什么时候调用哪个MCP client的哪种tool，并通过返回的response进行下一步的工作。
 ### MCP Server例子
 我最开始对于MCP Server的理解是Service Provider专门针对MCP协议所部属的server，那么所有的MCP Server的开发工作应该属于Service Provider，但查看了一下[github为Claude给出的MCP Server例子](https://github.com/modelcontextprotocol/servers/tree/main/src/github)后发现MCP Server其实更类似于一种本地对于service provider的封装，或者说专门针对MCP协议路由的controller，提供MCP协议要求的服务，至于服务的具体实现，则是通过service provider原有的API call实现的。

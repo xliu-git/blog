@@ -11,8 +11,17 @@
     </image>
     <generator>Hugo -- 0.140.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 30 Mar 2025 21:25:33 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 09 Apr 2025 19:33:43 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WebRTC小结</title>
+      <link>http://localhost:1313/posts/webrtc%E5%B0%8F%E7%BB%93/</link>
+      <pubDate>Wed, 09 Apr 2025 19:33:43 +0800</pubDate>
+      <guid>http://localhost:1313/posts/webrtc%E5%B0%8F%E7%BB%93/</guid>
+      <description>&lt;h3 id=&#34;webrtc&#34;&gt;WebRTC&lt;/h3&gt;
+&lt;h3 id=&#34;websocket&#34;&gt;WebSocket&lt;/h3&gt;
+&lt;h3 id=&#34;sse&#34;&gt;SSE&lt;/h3&gt;</description>
+    </item>
     <item>
       <title>MCP小结</title>
       <link>http://localhost:1313/posts/mcp%E5%B0%8F%E7%BB%93/</link>
@@ -37,7 +46,6 @@
 &lt;li&gt;提供tool路由：https://github.com/modelcontextprotocol/servers/blob/main/src/github/index.ts#L208&lt;/li&gt;
 &lt;li&gt;运行tool（通过API实现）：https://github.com/modelcontextprotocol/servers/blob/main/src/github/operations/commits.ts#L12&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;mcp-client例子&#34;&gt;MCP Client例子&lt;/h3&gt;
 &lt;h3 id=&#34;reference&#34;&gt;Reference&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://modelcontextprotocol.io/introduction&#34;&gt;https://modelcontextprotocol.io/introduction&lt;/a&gt;&lt;/li&gt;
