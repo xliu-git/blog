@@ -19,8 +19,30 @@
       <pubDate>Wed, 09 Apr 2025 19:33:43 +0800</pubDate>
       <guid>http://localhost:1313/posts/webrtc%E5%B0%8F%E7%BB%93/</guid>
       <description>&lt;h3 id=&#34;webrtc&#34;&gt;WebRTC&lt;/h3&gt;
-&lt;h3 id=&#34;websocket&#34;&gt;WebSocket&lt;/h3&gt;
-&lt;h3 id=&#34;sse&#34;&gt;SSE&lt;/h3&gt;</description>
+&lt;p&gt;一种应用在Web应用上的流式传输协议&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;RTCPeerConnection：WebRTC的连接。
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;addTrack()&lt;/code&gt;：添加媒体流。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;createOffer()&lt;/code&gt;：创建一个信息SDP offer，包含必要的如ICE信息、媒体流信息，来启动与peer的WebRTC连接。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;MediaStream：媒体流，提供了用于处理媒体流及其组成轨道的接口和方法，e.g. 由&lt;code&gt;getUserMedia()&lt;/code&gt;创建的MediaStream就是本地用户麦克风和相机的原输入，可以向RTC连接中添加。&lt;/li&gt;
+&lt;li&gt;RTCDataChannel：双向数据通道，有&lt;code&gt;onopen&lt;/code&gt;, &lt;code&gt;onmessage&lt;/code&gt;, &lt;code&gt;onerror&lt;/code&gt;等事件处理器，可以向RTC连接中添加。&lt;/li&gt;
+&lt;li&gt;SDP：会话描述协议，描述P2P连接的标准，音视频的编解码器。&lt;/li&gt;
+&lt;li&gt;ICE：交互式连接建立，在NAT的情况下依然能建立P2P连接
+&lt;ul&gt;
+&lt;li&gt;STUN服务器：提供了一种寻找NAT设备后的IP以及端口的方案，公网上有一些免费的STUN服务器。&lt;/li&gt;
+&lt;li&gt;TURN服务器：复杂防火墙的情况下，一种对等连接的解决方案，有开源的TURN服务器项目。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;信令&#34;&gt;信令&lt;/h4&gt;
+&lt;h3 id=&#34;references&#34;&gt;References&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://developer.mozilla.org/zh-CN/docs/Web/API/WebRTC_API&#34;&gt;https://developer.mozilla.org/zh-CN/docs/Web/API/WebRTC_API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://webrtc.org/getting-started/peer-connections?hl=zh-cn&#34;&gt;https://webrtc.org/getting-started/peer-connections?hl=zh-cn&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
     </item>
   </channel>
 </rss>

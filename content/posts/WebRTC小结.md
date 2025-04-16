@@ -1,8 +1,8 @@
 ---
 date: '2025-04-09T19:33:43+08:00'
-draft: true
+draft: false       
 title: 'WebRTC小结'
-tags: ["WebRTC", "WebSocket", "SSE"]
+tags: ["WebRTC"]
 ---
 
 ### WebRTC
@@ -17,11 +17,10 @@ tags: ["WebRTC", "WebSocket", "SSE"]
     * STUN服务器：提供了一种寻找NAT设备后的IP以及端口的方案，公网上有一些免费的STUN服务器。
     * TURN服务器：复杂防火墙的情况下，一种对等连接的解决方案，有开源的TURN服务器项目。
 #### 信令
+不同网络上的两个设备建立连接的过程需要有发现机制和媒体协商，以及两个设备连接到第三个共同商定的服务器，这个过程就是信令。信令可以通过WebSocket或者Http建立。
+* 交换SDP：请求方会创建一个offer并发送到接收者那里，接收者返回一个应答，双方此时都知道使用什么样的代码和参数进行通信。
+* 交换ICE候选：通过交换ICE Candidates建立具体连接路径，媒体流通过该连接开始运转。
 
-
-### WebSocket
-
-### SSE
 
 ### References
 1. https://developer.mozilla.org/zh-CN/docs/Web/API/WebRTC_API
